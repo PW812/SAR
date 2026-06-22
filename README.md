@@ -1,7 +1,7 @@
 
 # SAR: Scene-Action Representation for End-to-End Autonomous Driving
 
-> **Peiwei Chen**<sup>1,2,3</sup>, **Kaiqiu Xu**<sup>2</sup>, **Shengyin Fan**<sup>2</sup>, **Yudong Zhang**<sup>2</sup>, **Zhigang Ling**<sup>†1,3</sup>, **Yaonan Wang**<sup>1,3</sup>  
+> **Peiwei Chen**<sup>1,2,3</sup>, **Kaiqiu Xu**<sup>2</sup>, **Aoran Zhang**<sup>1,3</sup> ,**Shengyin Fan**<sup>2</sup>, **Yudong Zhang**<sup>2</sup>, **Zhigang Ling**<sup>†1,3</sup>, **Yaonan Wang**<sup>1,3</sup>  
 > <sup>1</sup> School of Artificial Intelligence and Robotics, Hunan University, Changsha, China  
 > <sup>2</sup> [Tianyijiaotong Technology Ltd.](https://www.tyjt-ai.com/), Suzhou, China  
 > <sup>3</sup> National Engineering Research Center of RVC, Changsha, China  
@@ -9,19 +9,19 @@
 
 ## Introduction
 
-We present **SAR (Scene-Action Representation)**, a novel end-to-end framework designed to enhance sparse scene understanding through structured behavior modeling, achieving state-of-the-art performance with remarkable efficiency. Inspired by human cognitive processes in driving, SAR decomposes the driving scene into three core, synergistic components: **global sparse scene semantics**, **ego-state awareness**, and **multi-agent behavioral dynamics**. These elements are seamlessly integrated via a dedicated **Scene-Action Transformer**, generating a cohesive, interpretable, and interaction-aware representation that facilitates high-quality, long-horizon trajectory planning.
+We present **SAR (Scene-Action Representation)**, a novel end-to-end framework designed to enhance sparse scene understanding through structured behavior modeling, achieving state-of-the-art performance with remarkable efficiency. Inspired by human cognitive processes in driving, SAR decomposes the driving scene into two complementary components: sparse scene semantics and spatial action representations. We first introduce a **Latent Ego Action** module that constructs a compact latent action bottleneck from navigation commands, local scene context, and risk-aware motion cues, without requiring explicit action labels. We then design a **Scene-Action Transformer** that injects ego and agent-related action cues into sparse scene tokens, transforming them from perception-centric scene descriptors into decision-oriented interaction representations for planning.
 
 <div align="center">
-  <img src="resources/Pipeline Comparisons.JPG" width="800"/>
+  <img src="resources/compair.jpg" width="800"/>
   <p><em>Figure 1: Comparison of SAR with conventional pipelines.</em></p>
 </div>
 
 ## Method Overview
 
-SAR ingests multi-modal sensor data, including LiDAR Bird's-Eye-View (BEV) features and camera images, to construct rich, multi-modal BEV representations through dynamic cross-view interactions. These representations are then distilled into distinct **sparse scene queries** and an **ego-centric query**. Concurrently, LiDAR BEV features are utilized to generate **agent-centric queries**. A purpose-built **Scene-Action Transformer** module orchestrates cascaded cross-modal interactions, significantly enriching the scene representation, which is pivotal for accurate and robust trajectory prediction.
+SAR takes multi-sensor inputs and constructs sparse scene tokens together with ego and agent-centric action tokens. A Scene-Action Transformer enhances the scene representation through cascaded interactions, enabling interaction-aware trajectory prediction.
 
 <div align="center">
-  <img src="resources/SAR0730.jpg" width="800"/>
+  <img src="resources/SAR1.jpg" width="800"/>
   <p><em>Figure 2: Detailed architecture of the SAR framework.</em></p>
 </div>
 
