@@ -70,7 +70,7 @@ We showcase qualitative results of SAR on the nuScenes dataset, demonstrating it
 ### nuScenes Examples
 
 <div align="center">
-  <img src="resources/1a9c83c482c84c9e874e21aab1820190_vis.png" width="800"/>
+  <!-- <img src="resources/1a9c83c482c84c9e874e21aab1820190_vis.png" width="800"/> -->
   <br/>
   <img src="resources/nuscenes_demo.gif" width="800"/>
 </div>
