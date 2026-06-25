@@ -22,7 +22,6 @@ python tools/data_converter/vad_nuscenes_converter.py nuscenes --root-path ./dat
 cd /path/to/SAR
 conda activate sar
 python -m torch.distributed.run --nproc_per_node=4 --master_port=2333 tools/train.py projects/configs/SAR/SAR_pts_motion_e2e_v2.py --launcher pytorch --deterministic --work-dir path/to/save/outputs
-# bash tools/dist_train.sh projects/configs/SSR/SSR_e2e.py work_dir/SSR 6 0,1,2,3,4,5
 ```
 OR
 ```shell
